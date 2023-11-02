@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crash course on Shadcn/ui creating a recipes site
 
-## Getting Started
+### 🔹 Shadcn/ui
 
-First, run the development server:
+Docs [Here](https://ui.shadcn.com/docs/installation/next)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- npx shadcn-ui@latest init
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, you can add the components you like. For example, if you want the [card](https://ui.shadcn.com/docs/components/card), : `npx shadcn-ui@latest add card`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+👉 Install it and manage it a bit first, before you messing with Tailwind, because this library overides your Tailwind previous config.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+#### - Placeholders:
 
-To learn more about Next.js, take a look at the following resources:
+- You can have nice placeholders while the content you are fetching is loading by using the `skeleton` component.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 🔹 json-server
 
-## Deploy on Vercel
+- `npm install -g json-server`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+'json-server' is a command-line tool that allows you to quickly create a `REST API server from a JSON file`. It is useful for `testing` and prototyping purposes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To start a JSON server that serves data from the db.json file located in the \_data directory:
+
+- `json-server --watch ./_data/db.json --port 4000`
+
+The --watch flag tells json-server to watch the db.json file for changes and automatically update the server if the file is modified.
+
+The --port flag specifies that the server should listen on port 4000.
+
+This command is commonly used during development to quickly create a mock API server for testing purposes.
+
+It gives us a `Resources` link, from which we are going to be able to fetch the data from : http://localhost:4000/recipes
+
+---
