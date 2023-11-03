@@ -18,6 +18,12 @@ Then, you can add the components you like. For example, if you want the [card](h
 
 ---
 
+### - Darkmode:
+
+Follow the [guide](https://ui.shadcn.com/docs/dark-mode/next)
+
+- `npm install next-themes`
+
 ### 🔹 json-server
 
 - `npm install -g json-server`
